@@ -21,22 +21,22 @@
     <div class="container">
 
         <div class="heading" style="margin-top:100px">
-            <h1>PROGRAM Menemukan Kuadran</h1>
+            <h1>Program Menemukan Kuadran</h1>
         </div>
 
-        <form onsubmit=hitungKuadran()>
-            <div class="form-group">
-                <label for="inputX">Koordinat X</label>
-                <input type="number" class="form-control" id="inputX" name="inputX" required a
-                    placeholder="Masukan nilai X">
-            </div>
-            <div class="form-group">
-                <label for="inputY">Koordinat X</label>
-                <input type="number" class="form-control" id="inputY" name="inputY" required a
-                    placeholder="Masukan nilai Y">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+
+        <div class="form-group">
+            <label for="inputX">Koordinat X</label>
+            <input type="number" class="form-control" id="inputX" name="inputX" required a
+                placeholder="Masukan nilai X">
+        </div>
+        <div class="form-group">
+            <label for="inputY">Koordinat Y</label>
+            <input type="number" class="form-control" id="inputY" name="inputY" required a
+                placeholder="Masukan nilai Y">
+        </div>
+        <button type="submit" class="btn btn-primary" onclick=hitungKuadran()>Submit</button>
+
 
         <div class="heading" style="margin-top:100px">
             <h1 id="result"></h1>
@@ -59,12 +59,16 @@
                 result = "Kuadran 3";
             } else if (x > 0 && y < 0) {
                 result = "Kuadran 4";
-            } else {
+            } else if (x == 0 && y != 0) {
+                result = "Sumbu Y";
+            } else if (y == 0 && x != 0) {
+                result = "Sumbu X";
+            } else if (x == 0 && y == 0) {
                 result = "Titik Pusat";
             }
 
-            alert(result);
-            //kuadran.innerHTML = result;
+            //alert(result);
+            kuadran.innerHTML = "Koordinat (" + x + "," + y + ") terletak di " + result;
 
         }
 
