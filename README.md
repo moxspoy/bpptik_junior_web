@@ -6,6 +6,8 @@ BPPTIK – BPPTIK Kementerian Komunikasi dan Informatika (Kominfo) membuka Penda
 
 # List
 1. Aplikasi yang menerima input berupa UTS, UAS, Tugas, dan Kehadiran untuk menentukan nilai akhir mahasiswa
+2. Aplikasi yang menerima input berupa titik koordinat (x,y) dan menentukan letak kuadrannya
+3. Aplikasi yang menjumlahkan seluruh input yang ada, jika bertemu dengan elemen 999 maka loop berhenti
 
 # Built With
 
