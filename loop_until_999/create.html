@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Junior Web - Loop Until 999 - Universitas Moxspoy</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="heading" style="margin-top:100px">
+            <h1>Program Penjumlahan Sampai 999</h1>
+        </div>
+
+
+        <div class="form-group">
+            <label for="inputX">Nilai ke - 1</label>
+            <input type="number" class="form-control" id="input1" required placeholder="Masukan nilai ke - 1">
+        </div>
+        <div class="form-group">
+            <label for="inputX">Nilai ke - 2</label>
+            <input type="number" class="form-control" id="input2" required placeholder="Masukan nilai ke - 2">
+        </div>
+        <div class="form-group">
+            <label for="inputX">Nilai ke - 3</label>
+            <input type="number" class="form-control" id="input3" required placeholder="Masukan nilai ke - 3">
+        </div>
+        <div class="form-group">
+            <label for="inputX">Nilai ke - 4</label>
+            <input type="number" class="form-control" id="input1" required placeholder="Masukan nilai ke - 4">
+        </div>
+        <div class="form-group">
+            <label for="inputX">Nilai ke - 5</label>
+            <input type="number" class="form-control" id="input5" required placeholder="Masukan nilai ke - 5">
+        </div>
+        <div class="form-group">
+            <label for="inputX">Nilai ke - 6</label>
+            <input type="number" class="form-control" id="input6" required placeholder="Masukan nilai ke - 6">
+        </div>
+        <div class="form-group">
+            <label for="inputX">Nilai ke - 7</label>
+            <input type="number" class="form-control" id="input7" required placeholder="Masukan nilai ke - 7">
+        </div>
+        <div class="form-group">
+            <label for="inputX">Nilai ke - 8</label>
+            <input type="number" class="form-control" id="input8" required placeholder="Masukan nilai ke - 8">
+        </div>
+        <div class="form-group">
+            <label for="inputX">Nilai ke - 9</label>
+            <input type="number" class="form-control" id="input9" required placeholder="Masukan nilai ke - 9">
+        </div>
+        <div class="form-group">
+            <label for="inputX">Nilai ke - 10</label>
+            <input type="number" class="form-control" id="input10" required placeholder="Masukan nilai ke - 10">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary" onclick=hitungNilai()>Submit</button>
+
+
+        <div class="heading" style="margin-top:100px">
+            <h1 id="result"></h1>
+        </div>
+
+    </div>
+
+    <script>
+        function hitungNilai() {
+            let x = document.getElementById('inputX').value;
+            let y = document.getElementById('inputY').value;
+            let kuadran = document.getElementById('result');
+            var result = "";
+
+            if (x > 0 && y > 0) {
+                result = "Kuadran 1";
+            } else if (x < 0 && y > 0) {
+                result = "Kuadran 2";
+            } else if (x < 0 && y < 0) {
+                result = "Kuadran 3";
+            } else if (x > 0 && y < 0) {
+                result = "Kuadran 4";
+            } else if (x == 0 && y != 0) {
+                result = "Sumbu Y";
+            } else if (y == 0 && x != 0) {
+                result = "Sumbu X";
+            } else if (x == 0 && y == 0) {
+                result = "Titik Pusat";
+            }
+
+            //alert(result);
+            kuadran.innerHTML = "Koordinat (" + x + "," + y + ") terletak di " + result;
+
+        }
+
+
+        //swal("Nilai Akhir", " ' . $result . '", "success");
+    </script>
+
+</body>
+
+</html>

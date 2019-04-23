@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Junior Web - Loop Until 999 - Universitas Moxspoy</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="heading" style="margin-top:100px">
+            <h1>Program Penjumlahan Sampai 999</h1>
+        </div>
+
+
+        <div class="form-group">
+            <label for="inputX">Nilai ke - 1</label>
+            <input type="number" class="form-control" id="input1" required placeholder="Masukan nilai ke - 1">
+        </div>
+        <div class="form-group">
+            <label for="inputX">Nilai ke - 2</label>
+            <input type="number" class="form-control" id="input2" required placeholder="Masukan nilai ke - 2">
+        </div>
+        <div class="form-group">
+            <label for="inputX">Nilai ke - 3</label>
+            <input type="number" class="form-control" id="input3" required placeholder="Masukan nilai ke - 3">
+        </div>
+        <div class="form-group">
+            <label for="inputX">Nilai ke - 4</label>
+            <input type="number" class="form-control" id="input4" required placeholder="Masukan nilai ke - 4">
+        </div>
+        <div class="form-group">
+            <label for="inputX">Nilai ke - 5</label>
+            <input type="number" class="form-control" id="input5" required placeholder="Masukan nilai ke - 5">
+        </div>
+        <div class="form-group">
+            <label for="inputX">Nilai ke - 6</label>
+            <input type="number" class="form-control" id="input6" required placeholder="Masukan nilai ke - 6">
+        </div>
+        <div class="form-group">
+            <label for="inputX">Nilai ke - 7</label>
+            <input type="number" class="form-control" id="input7" required placeholder="Masukan nilai ke - 7">
+        </div>
+        <div class="form-group">
+            <label for="inputX">Nilai ke - 8</label>
+            <input type="number" class="form-control" id="input8" required placeholder="Masukan nilai ke - 8">
+        </div>
+        <div class="form-group">
+            <label for="inputX">Nilai ke - 9</label>
+            <input type="number" class="form-control" id="input9" required placeholder="Masukan nilai ke - 9">
+        </div>
+        <div class="form-group">
+            <label for="inputX">Nilai ke - 10</label>
+            <input type="number" class="form-control" id="input10" required placeholder="Masukan nilai ke - 10">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary" onclick=hitungNilai()>Submit</button>
+
+
+        <div class="heading" style="margin-top:100px">
+            <h1 id="result"></h1>
+        </div>
+
+    </div>
+
+    <script>
+        function hitungNilai() {
+
+            let x1 = document.getElementById('input1').value;
+            let x2 = document.getElementById('input2').value;
+            let x3 = document.getElementById('input3').value;
+            let x4 = document.getElementById('input4').value;
+            let x5 = document.getElementById('input5').value;
+            let x6 = document.getElementById('input6').value;
+            let x7 = document.getElementById('input7').value;
+            let x8 = document.getElementById('input8').value;
+            let x9 = document.getElementById('input9').value;
+            let x10 = document.getElementById('input10').value;
+
+            //push to array
+            let data = new Array(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10);
+            let sum = 0;
+            let isThere999 = false;
+            let i = 0;
+
+            while (i < 10 && !isThere999) {
+                if (data[i] == 999) {
+                    isThere999 = true;
+                    break;
+                }
+                sum += Number(data[i]);
+                i++;
+            }
+
+            //now we have a data, calculate till fin d 999
+            //let result = sumAll(data);
+
+            let jumlah = document.getElementById('result');
+            jumlah.innerHTML = sum;
+
+
+        }
+    </script>
+
+</body>
+
+</html>
