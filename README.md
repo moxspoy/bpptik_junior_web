@@ -7,7 +7,13 @@ BPPTIK – BPPTIK Kementerian Komunikasi dan Informatika (Kominfo) membuka Penda
 # List
 1. Aplikasi yang menerima input berupa UTS, UAS, Tugas, dan Kehadiran untuk menentukan nilai akhir mahasiswa
 
+# Built With
+
+* [Bootstrap](https://getbootstrap.com) - Bootstrap 4
+* [SweetAlert](https://sweetalert.js.org/guides/) - SweetAlert.js
+
+
 # Author
-M Nurilman Baehaqi
-Computer Science FMIPA UNJ
-All right reserved
+* M Nurilman Baehaqi
+* Computer Science FMIPA UNJ
+* All right reserved
