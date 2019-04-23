@@ -68,44 +68,36 @@
             let keterangan = "";
 
 
-
             //main logic
-            if (is)
-                if (kehadiran < 80) {
-                    keterangan = "E";
-                } else {
-                    nilai_akhir = (0.3 * UTS) + (0.4 * UAS) + (0.2 * tugas) +
-                        (0.1 * kehadiran);
-                    if (nilai_akhir >= 85) {
-                        keterangan = "A";
-                    } else if (nilai_akhir >= 70) {
-                        keterangan = "B";
-                    } else if (nilai_akhir >= 60) {
-                        keterangan = "C";
-                    } else if (nilai_akhir >= 55) {
-                        keterangan = "D";
-                    } else {
+            if (UTS == null && UAS == null && tugas == null && keterangan == null) {
+                if (UTS >= 0 && UTS <= 100 && UAS >= 0 && UAS <= 100 && tugas >= 0 && tugas <= 100 && kehadiran >= 0 &&
+                    kehadiran <= 100) {
+                    if (kehadiran < 80) {
                         keterangan = "E";
+                    } else {
+                        nilai_akhir = (0.3 * UTS) +
+                            (0.4 * UAS) + (0.2 * tugas) + (0.1 * kehadiran);
+                        if (nilai_akhir >= 85) {
+                            keterangan = "A";
+                        } else if (nilai_akhir >= 70) {
+                            keterangan = "B";
+                        } else if (nilai_akhir >= 60) {
+                            keterangan = "C";
+                        } else if (nilai_akhir >= 55) {
+                            keterangan = "D";
+                        } else {
+                            keterangan = "E";
+                        }
                     }
+
+                    //show
+                    swal("Hasil", "Nilai: " + nilai_akhir + ", Indeks: " + keterangan, "success");
+                } else {
+                    swal("Salah", "Semua input harus bernilai antara 0 - 100!", "error");
                 }
-
-            //show
-            swal("Hasil", "Nilai: " + nilai_akhir + ", Indeks: " + keterangan, "success");
-
-        }
-
-        function isValidInput(UAS, UTS, tugas, kehadiran) {
-
-            //should conyain between 0 and 100
-            let firstRules = UTS >= 0 && UTS <= 100 && UAS >= 0 && UAS <= 100 && tugas >= 0 && tugas <= 100 &&
-                kehadiran >= 0 && kehadiran <= 100;
-
-            //should numeric only
-
-            if (firstRules) {
-
+            } else {
+                swal("Salah", "Semua input tidak boleh kosong bosque", "error");
             }
-
         }
     </script>
 
