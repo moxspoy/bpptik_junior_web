@@ -58,20 +58,16 @@
 
         function hitungNilai() {
 
-            //initialize all element from input html
-            let x1 = document.getElementById('input1').value;
-            let x2 = document.getElementById('input2').value;
-            let x3 = document.getElementById('input3').value;
-            let x4 = document.getElementById('input4').value;
-            let x5 = document.getElementById('input5').value;
-            let x6 = document.getElementById('input6').value;
-            let x7 = document.getElementById('input7').value;
-            let x8 = document.getElementById('input8').value;
-            let x9 = document.getElementById('input9').value;
-            let x10 = document.getElementById('input10').value;
+            //initialize all element from input html and push to array using Loop
 
-            //push to array
-            let data = new Array(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10);
+            let data = new Array();
+            for (let i = 1; i <= MAX_ELEMENT; i++) {
+                let init_element = "document.getElementById('input" + i + "').value";
+                let val = eval(init_element);
+                let val_number = Number(val);
+                //console.log(val);
+                data.push(val_number);
+            }
 
             //now we have a data, calculate till find 999
             let sum = 0;
