@@ -14,6 +14,6 @@ BPPTIK – BPPTIK Kementerian Komunikasi dan Informatika (Kominfo) membuka Penda
 
 
 # Author
-* M Nurilman Baehaqi
-* Computer Science FMIPA UNJ
+* [M Nurilman Baehaqi](https://instagram.com/moxspoy)
+* [Computer Science FMIPA UNJ](https://unj.ac.id)
 * All right reserved
