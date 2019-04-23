@@ -79,6 +79,7 @@
     <script>
         function hitungNilai() {
 
+            //initialize all element from input html
             let x1 = document.getElementById('input1').value;
             let x2 = document.getElementById('input2').value;
             let x3 = document.getElementById('input3').value;
@@ -92,6 +93,8 @@
 
             //push to array
             let data = new Array(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10);
+
+            //now we have a data, calculate till find 999
             let sum = 0;
             let isThere999 = false;
             let i = 0;
@@ -105,13 +108,9 @@
                 i++;
             }
 
-            //now we have a data, calculate till fin d 999
-            //let result = sumAll(data);
-
+            //print all element to html
             let jumlah = document.getElementById('result');
             jumlah.innerHTML = sum;
-
-
         }
     </script>
 

@@ -1,3 +1,9 @@
+<!-- Author
+    * M NURILMAN BAEHAQI
+    * Training and Certification for Junior Web Programming (JWP) by BPPTIK Kominfo
+    * 23 April 2019, Room 112 at Main Building
+-->
+
 <!DOCTYPE html>
 <html>
 
@@ -58,9 +64,6 @@
             let tugas = document.getElementById("Tugas").value;
             let kehadiran = document.getElementById("Kehadiran").value;
 
-            let isValidInput = UTS >= 0 && UTS <= 100 && UAS >= 0 && UAS <= 100 && tugas >= 0 && tugas <= 100 &&
-                kehadiran >= 0 && kehadiran <= 100;
-
             let nilai_akhir = "";
             let keterangan = "";
 
@@ -91,7 +94,19 @@
 
         }
 
-        function isValidInput(UAS, UTS, tugas, kehadiran);
+        function isValidInput(UAS, UTS, tugas, kehadiran) {
+
+            //should conyain between 0 and 100
+            let firstRules = UTS >= 0 && UTS <= 100 && UAS >= 0 && UAS <= 100 && tugas >= 0 && tugas <= 100 &&
+                kehadiran >= 0 && kehadiran <= 100;
+
+            //should numeric only
+
+            if (firstRules) {
+
+            }
+
+        }
     </script>
 
 </body>
