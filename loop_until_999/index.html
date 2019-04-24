@@ -45,14 +45,15 @@
 
     <script>
         let MAX_ELEMENT = 3;
+        let data = new Array();
 
         //create element with loop
-        tambahBaris();
+        initialTambahBaris();
 
-        function tambahBaris() {
+        function initialTambahBaris() {
             //create element with loop
             let element = "";
-            for (let i = 1; i <= MAX_ELEMENT; i++) {
+            for (let i = 0; i < MAX_ELEMENT; i++) {
                 element = element + "<div class='form-group'>";
                 element = element +
                     "<label for='inputX'>Nilai ke - " + i + "</label>";
@@ -63,29 +64,50 @@
                 element = element + "</div>";
             }
             document.getElementById("input_element").innerHTML = element;
+        }
+
+        function tambahBaris() {
+
+            //create element with loop
+            getElement();
+            let element = "";
             MAX_ELEMENT++;
+            data.sort();
+            for (let i = 0; i < MAX_ELEMENT - 1; i++) {
+                element = element + "<div class='form-group'>";
+                element = element +
+                    "<label for='inputX'>Nilai ke - " + i + "</label>";
+                element = element +
+                    "<input type='number' class='form-control' id='input" + i +
+                    "' value='" + data[i] + "' required placeholder='Masukan nilai ke - " +
+                    i + "'>";
+                element = element + "</div>";
+            }
+
+            //append with last row
+            let last_size = MAX_ELEMENT - 1;
+            element = element + "<div class='form-group'>";
+            element = element +
+                "<label for='inputX'>Nilai ke - " + last_size + "</label>";
+            element = element +
+                "<input type='number' class='form-control' id='input" + last_size +
+                "' required placeholder='Masukan nilai ke - " +
+                last_size + "'>";
+            element = element + "</div>";
+
+            document.getElementById("input_element").innerHTML = element;
         }
 
         function hitungNilai() {
 
-            //initialize all element from input html and push to array using Loop
-
-            let data = new Array();
-            for (let i = 1; i <= MAX_ELEMENT - 1; i++) {
-                let init_element = "document.getElementById('input" + i + "').value";
-                console.log(init_element);
-                let val = eval(init_element);
-                console.log(val);
-                let val_number = Number(val);
-                data.push(val_number);
-            }
+            getElement();
 
             //now we have a data, calculate till find 999
             let sum = 0;
             let isThere999 = false;
             let i = 0;
 
-            while (i < 10 && !isThere999) {
+            while (i < MAX_ELEMENT && !isThere999) {
                 if (data[i] == 999) {
                     isThere999 = true;
                     break;
@@ -97,6 +119,17 @@
             //print all element to html
             let jumlah = document.getElementById('result');
             jumlah.innerHTML = sum;
+        }
+
+        function getElement() {
+            //initialize all element from input html and push to array using Loop
+            data = new Array();
+            for (let i = 0; i < MAX_ELEMENT; i++) {
+                let init_element = "document.getElementById('input" + (i) + "').value";
+                let val = eval(init_element);
+                let val_number = Number(val);
+                data.push(val_number);
+            }
         }
     </script>
 
