@@ -20,3 +20,6 @@ BPPTIK – BPPTIK Kementerian Komunikasi dan Informatika (Kominfo) membuka Penda
 * [M Nurilman Baehaqi](https://instagram.com/moxspoy)
 * [Computer Science FMIPA UNJ](https://unj.ac.id)
 * All right reserved
+
+### E-Learning
+[LMS BPPTIK](http://192.168.200.108/lmsbpptik) Access The Resources;
