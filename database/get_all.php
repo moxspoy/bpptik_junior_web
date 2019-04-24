@@ -1,8 +1,13 @@
 <?php
+
+include("Student.php");
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "test";
+
+//Create storage
+$students = array();
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,7 +18,6 @@ if ($conn->connect_error) {
 
 $sql = "SELECT nim, nama, tanggal_lahir, alamat FROM mahasiswa";
 $result = $conn->query($sql);
-
 
 ?>
 
@@ -61,15 +65,25 @@ $result = $conn->query($sql);
                     // output data of each row
                     $counter = 1;
                     while($row = $result->fetch_assoc()) {
-                        echo "<th scope='row'>" . $counter . "</th><td>" . $row["nim"]. "</td> <td>" 
-                        . $row["nama"]. " </td> <td> " . $row["tanggal_lahir"] . "</td> <td> " 
-                        .  $row["alamat"] . "</td></tr>" ;
+                        //Init data
+                        $NIM = $row["nim"];
+                        $name = $row["nama"];
+                        $birthDate = $row["tanggal_lahir"];
+                        $address = $row["alamat"];
+                        //save to array
+                        $student = new Student($NIM, $name, $birthDate, $address);
+                        array_push($students, $student);
+
+                        echo "<th scope='row'>" . $counter . "</th><td>" . $NIM . "</td> <td>" 
+                        . $name . " </td> <td> " . $birthDate . "</td> <td> " 
+                        .  $address . "</td></tr>" ;
                         $counter++;
                     }
                 } else {
                     echo "0 results";
                 }
                 $conn->close();
+
                 ?>
                 </tbody></table>
             
